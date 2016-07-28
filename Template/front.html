@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Pages</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<style>
+body {
+font-family: sans-serif;
+width: 800 px;
+margin 0 auto;
+padding: 10px;
+}
+
+.error {
+	color:red;
+}
+
+label {
+	display: block;
+	font-size: 20px;
+}
+
+input[type=text]{
+	width: 400px;
+	font-zise:20px;
+}
+
+textarea {
+	width: 400px;
+	height: 200px;
+	font-size: 17px;
+	font-family: monospace;
+}
+
+input[type=submit] {
+	font-size: 24px;
+}
+
+hr {
+	margin: 20px auto;
+}
+
+
+</style>
+
+<body>
+
+<h1>Welcome to the Blog</h1>
+
+<form method = "post">
+	<label>
+		<div>Blogpost Title</div>
+		<input type="text" name="title" value="{{}}">
+	</label>
+
+	<label>
+		<div>Blogpost Content</div>
+		<textarea name="blogpost">{{blogpost}}</textarea>
+	</label>
+
+	<div class="error">{{error}}</div>
+
+	<input type="submit" name="submit">
+</form>
+
+<hr>
+
+{% for content in contents %}
+<div class="blogpost">
+<div class="blogpost-title">{{blogpost.title}}</div>
+<pre class="blogpost-content">{{blogpost.content}}</pre>
+</div>
+{% endfor %}
+
+</body>
+
+</!DOCTYPE html>
+
+</html>
